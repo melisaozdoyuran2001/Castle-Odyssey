@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
     private bool                m_grounded = false;
     private bool                m_combatIdle = false;
     private bool                m_isDead = false;
+    public GameObject           orbPrefab; 
+    public float                bombVelocity = 2f; 
 
     public TextMeshProUGUI gameOverTmp;
 
@@ -72,6 +74,7 @@ public class Player : MonoBehaviour {
         //Attack
         else if(Input.GetMouseButtonDown(0)) {
             m_animator.SetTrigger("Attack");
+            FireToEnemy();
         }
 
         //Change between idle and combat idle
@@ -104,6 +107,19 @@ public class Player : MonoBehaviour {
         if (other.gameObject.name == "Dead Zone") {
             Debug.Log("Dead Zone collision detected");
             gameOverTmp.text = "Game Over";
+            Time.timeScale = 0f; 
         }
+    }
+
+    void FireToEnemy() {
+
+        Vector3 direction = transform.localScale.x > 0 ? -transform.right : transform.right;
+        Vector3 spawnPosition = transform.position + direction;
+        GameObject bomb = Instantiate(orbPrefab, spawnPosition, Quaternion.identity);
+
+        bomb.transform.localPosition += new Vector3(0, 0.7f, 0);
+        Rigidbody2D bombRB = bomb.GetComponent<Rigidbody2D>();
+        bombRB.velocity = bombVelocity * direction;
+
     }
 }

@@ -286,3 +286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 4
   m_jumpForce: 7.5
+  orbPrefab: {fileID: 2156678624113442463, guid: 42642186564a54ec1a7edd908599b689, type: 3}
+  bombVelocity: 5
+  gameOverTmp: {fileID: 0}

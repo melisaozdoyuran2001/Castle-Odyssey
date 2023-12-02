@@ -6,6 +6,7 @@ using TMPro;
 public class orbController : MonoBehaviour
 {
     public GameObject scorePrefab; 
+    [SerializeField] private AudioClip enemyDeathSoundEffect;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "enemy") {
@@ -13,5 +14,9 @@ public class orbController : MonoBehaviour
             ScoreManager.Instance.IncreaseScore(); 
         }
         Destroy(gameObject); 
+    }
+
+    private void OnDestroy() {
+        AudioSource.PlayClipAtPoint(enemyDeathSoundEffect, transform.position);
     }
 }

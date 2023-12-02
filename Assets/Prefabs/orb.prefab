@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePrefab: {fileID: 2081283512399397981, guid: d96dfd1b50b2c42bdbe24a7cfd91463a, type: 3}
+  enemyDeathSoundEffect: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}

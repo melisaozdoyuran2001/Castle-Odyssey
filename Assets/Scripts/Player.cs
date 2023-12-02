@@ -8,18 +8,21 @@ public class Player : MonoBehaviour {
 
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
+    [SerializeField] private AudioSource attackSoundEffect;
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource gameOverSoundEffect;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
     private bool                m_grounded = false;
     private bool                m_combatIdle = false;
-    private bool                m_isDead = false;
     public GameObject           orbPrefab; 
     public float                bombVelocity = 2f; 
 
     public TextMeshProUGUI gameOverTmp;
     public Button playAgain; 
+    public BackgroundMusicController backgroundMusicController;
 
     // Use this for initialization
     void Start () {
@@ -60,32 +63,16 @@ public class Player : MonoBehaviour {
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
 
         // -- Handle Animations --
-        //Death
-        if (Input.GetKeyDown("e")) {
-            if(!m_isDead)
-                m_animator.SetTrigger("Death");
-            else
-                m_animator.SetTrigger("Recover");
-
-            m_isDead = !m_isDead;
-        }
-            
-        //Hurt
-        else if (Input.GetKeyDown("q"))
-            m_animator.SetTrigger("Hurt");
-
         //Attack
-        else if(Input.GetMouseButtonDown(0)) {
+        if(Input.GetMouseButtonDown(0)) {
+            attackSoundEffect.Play();
             m_animator.SetTrigger("Attack");
             FireToEnemy();
         }
 
-        //Change between idle and combat idle
-        else if (Input.GetKeyDown("f"))
-            m_combatIdle = !m_combatIdle;
-
         //Jump
         else if (Input.GetKeyDown("space") && m_grounded) {
+            jumpSoundEffect.Play();
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
@@ -108,10 +95,10 @@ public class Player : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.name == "Dead Zone" || other.gameObject.tag == "enemy") {
-            //Debug.Log("Dead Zone collision detected");
+            backgroundMusicController.StopBackgroundMusic();
+            gameOverSoundEffect.Play();
             gameOverTmp.text = "Game Over";
             playAgain.gameObject.SetActive(true); 
-            Debug.Log("game Over");
             Time.timeScale = 0f; 
         }
         else if( other.gameObject.tag == "lvl1"){

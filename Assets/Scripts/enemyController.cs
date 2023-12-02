@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class enemyController : MonoBehaviour
 {
     public float moveDistance = 3.0f; 
     public float speed = 2.0f;
-    private float direction = 1.0f; 
+    public float direction = 1.0f; 
     private float moved = 0.0f; 
     void Update()
     {

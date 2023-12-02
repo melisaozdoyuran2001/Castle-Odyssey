@@ -18,11 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830922352796916563, guid: 0777546d5339e4410b255b091acf9314, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.23
+      value: 4.878
       objectReference: {fileID: 0}
     - target: {fileID: 830922352796916563, guid: 0777546d5339e4410b255b091acf9314, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.105
       objectReference: {fileID: 0}
     - target: {fileID: 830922352796916563, guid: 0777546d5339e4410b255b091acf9314, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b2af98cfbf96ce841963b37ec392cf64, type: 2}
+    - target: {fileID: 5065945517775228782, guid: 0777546d5339e4410b255b091acf9314, type: 3}
+      propertyPath: speed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065945517775228782, guid: 0777546d5339e4410b255b091acf9314, type: 3}
+      propertyPath: moveDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7085920754812986566, guid: 0777546d5339e4410b255b091acf9314, type: 3}
       propertyPath: m_Name
       value: rat-enemy Variant

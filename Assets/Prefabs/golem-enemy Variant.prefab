@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: golem-enemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2831658123045801075, guid: 5a5eba0c5176141b88c62bf415108a85, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4416046143053203083, guid: 5a5eba0c5176141b88c62bf415108a85, type: 3}
       propertyPath: m_Controller
       value: 

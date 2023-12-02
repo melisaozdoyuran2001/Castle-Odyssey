@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 
 public class Player : MonoBehaviour {
 
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour {
     public float                bombVelocity = 2f; 
 
     public TextMeshProUGUI gameOverTmp;
+    public Button playAgain; 
 
     // Use this for initialization
     void Start () {
@@ -104,10 +107,28 @@ public class Player : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.name == "Dead Zone") {
-            Debug.Log("Dead Zone collision detected");
+        if (other.gameObject.name == "Dead Zone" || other.gameObject.tag == "enemy") {
+            //Debug.Log("Dead Zone collision detected");
             gameOverTmp.text = "Game Over";
+            playAgain.gameObject.SetActive(true); 
+            Debug.Log("game Over");
             Time.timeScale = 0f; 
+        }
+        else if( other.gameObject.tag == "lvl1"){
+            SceneManager.LoadScene(2);
+        }
+        else if( other.gameObject.tag == "lvl2"){
+            SceneManager.LoadScene(3);
+        }
+        else if( other.gameObject.tag == "lvl3"){
+            SceneManager.LoadScene(4);
+        }
+         else if( other.gameObject.tag == "lvl4"){
+            SceneManager.LoadScene(5);
+        }
+        else if( other.gameObject.tag == "lvl5"){
+           SceneManager.LoadScene(6);
+          
         }
     }
 
@@ -121,5 +142,10 @@ public class Player : MonoBehaviour {
         Rigidbody2D bombRB = bomb.GetComponent<Rigidbody2D>();
         bombRB.velocity = bombVelocity * direction;
 
+    }
+
+    public void RestartGame() {
+         Time.timeScale = 1f; 
+        SceneManager.LoadScene(1); 
     }
 }

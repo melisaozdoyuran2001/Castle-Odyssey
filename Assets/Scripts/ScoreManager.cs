@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public static int scoreNum = 0;
     public  TextMeshProUGUI score;
+    public static int levelNum = 1; 
 
 
     private void Awake()
@@ -22,7 +23,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
     void Start() {
-         score.text = "Score: " + scoreNum.ToString() + " / 100";
+        if(levelNum == 1){
+           scoreNum = 0; 
+        }
+        score.text = "Score: " + scoreNum.ToString() + " / 100";
+         
     }
 
     public void IncreaseScore()

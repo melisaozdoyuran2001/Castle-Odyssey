@@ -8,6 +8,7 @@ public class GameStarter : MonoBehaviour
     public Button startGame; 
     
     public void StartGame() {
+        ScoreManager.levelNum = 1;
         SceneManager.LoadScene(1) ; 
     }
 }

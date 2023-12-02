@@ -116,19 +116,22 @@ public class Player : MonoBehaviour {
         }
         else if( other.gameObject.tag == "lvl1"){
             SceneManager.LoadScene(2);
+            ScoreManager.levelNum = 2; 
         }
         else if( other.gameObject.tag == "lvl2"){
             SceneManager.LoadScene(3);
+            ScoreManager.levelNum = 3; 
         }
         else if( other.gameObject.tag == "lvl3"){
             SceneManager.LoadScene(4);
+            ScoreManager.levelNum = 4; 
         }
          else if( other.gameObject.tag == "lvl4"){
             SceneManager.LoadScene(5);
+            ScoreManager.levelNum = 5; 
         }
         else if( other.gameObject.tag == "lvl5"){
            SceneManager.LoadScene(6);
-          
         }
     }
 
@@ -145,7 +148,8 @@ public class Player : MonoBehaviour {
     }
 
     public void RestartGame() {
-         Time.timeScale = 1f; 
-        SceneManager.LoadScene(1); 
+        Time.timeScale = 1f; 
+        ScoreManager.levelNum = 1; 
+        SceneManager.LoadScene(1);
     }
 }

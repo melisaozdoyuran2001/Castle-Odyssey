@@ -1,6 +1,6 @@
 # Cave Odyssey
 <p align="right">
-  <img src="<img width="821" alt="Screen Shot 2023-12-02 at 8 43 43 PM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/1e393ee0-4faa-45a4-8bd7-b983e0d3f87d">" width="120" align="right" />
+  <img width="821" alt="Screen Shot 2023-12-02 at 8 43 43 PM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/1e393ee0-4faa-45a4-8bd7-b983e0d3f87d">
 </p>
 
 

@@ -1,5 +1,5 @@
 # Cave Odyssey
-## Owners: Melisa Ozdoyuran, Davi Maciel 
+
 Welcome to the official repository for Cave Odyssey, a pixel art style adventure game that takes you through a series of intricate underground levels each with its own unique challenges and environments.
 
 ## Game Overview
@@ -8,6 +8,8 @@ Cave Odyssey is an action-packed adventure game that follows our hero's journey 
 
 ## Getting Started
 To play Cave Odyssey, clone the repository and run it on your local machine.
+
+### Owners: Melisa Ozdoyuran, Davi Maciel 
 
 <img width="400" alt="Screen Shot 2023-12-02 at 2 55 55 AM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/dfb93833-788c-4714-a15e-03afd1c40d77">
 

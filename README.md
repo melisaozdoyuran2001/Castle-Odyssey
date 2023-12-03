@@ -7,14 +7,7 @@ Welcome to the official repository for Cave Odyssey, a pixel art style adventure
 Cave Odyssey is an action-packed adventure game that follows our hero's journey into the depths of mysterious caves. Each level is a new adventure, from icy caverns and lava-filled dungeons to bioluminescent abysses and lush subterranean jungles.
 
 ## Getting Started
-
 To play Cave Odyssey, clone the repository and run it on your local machine.
-
-```bash
-git clone https://github.com/yourusername/cave-odyssey.git
-cd cave-odyssey
-# Follow the instructions for installation and setup
-
 
 <img width="600" alt="Screen Shot 2023-12-02 at 2 55 55 AM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/dfb93833-788c-4714-a15e-03afd1c40d77">
 

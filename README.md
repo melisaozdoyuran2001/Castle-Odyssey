@@ -9,6 +9,14 @@ Cave Odyssey is an action-packed adventure game that follows our hero's journey 
 ## Getting Started
 To play Cave Odyssey, clone the repository and run it on your local machine.
 
+## How to Play
+Arrow keys: Move left and right
+Spacebar: Jump
+Mouse click: Attack with your sword
+Defeat monsters, overcome traps, and navigate through each level to emerge victorious.
+
+Happy Gaming!
+
 <img width="400" alt="Screen Shot 2023-12-02 at 2 55 55 AM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/dfb93833-788c-4714-a15e-03afd1c40d77">
 
 <img width="400" alt="Screen Shot 2023-12-02 at 2 56 21 AM" src="https://github.com/melisaozdoyuran2001/Castle-Odyssey/assets/123209674/b1fda403-0d05-47fa-b891-f3bd2b942289">

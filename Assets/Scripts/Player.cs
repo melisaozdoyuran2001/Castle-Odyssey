@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private AudioSource attackSoundEffect;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource gameOverSoundEffect;
+    [SerializeField] private AudioSource runSoundEffect;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour {
             m_animator.SetBool("Grounded", m_grounded);
         }
 
+      
+
         //Check if character just started falling
         if(m_grounded && !m_groundSensor.State()) {
             m_grounded = false;
@@ -51,10 +54,34 @@ public class Player : MonoBehaviour {
         float inputX = Input.GetAxis("Horizontal");
 
         // Swap direction of sprite depending on walk direction
-        if (inputX > 0)
+        if (inputX > 0 ) {
             transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
-        else if (inputX < 0)
+            if(!m_grounded){
+                runSoundEffect.Stop();
+            }
+            else {
+                 if (!runSoundEffect.isPlaying) {
+                runSoundEffect.Play();
+            }
+            }
+        } 
+        else if (inputX < 0) {
             transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+           if(!m_grounded){
+                runSoundEffect.Stop();
+            }
+            else {
+                 if (!runSoundEffect.isPlaying) {
+                runSoundEffect.Play();
+            }
+            }
+        } 
+        else {
+            if (runSoundEffect.isPlaying) {
+                runSoundEffect.Stop();
+            }
+        }
+
 
         // Move
         m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
@@ -80,9 +107,13 @@ public class Player : MonoBehaviour {
             m_groundSensor.Disable(0.2f);
         }
 
+
+
         //Run
-        else if (Mathf.Abs(inputX) > Mathf.Epsilon)
+        else if (Mathf.Abs(inputX) > Mathf.Epsilon){
             m_animator.SetInteger("AnimState", 2);
+           
+        }
 
         //Combat Idle
         else if (m_combatIdle)
@@ -98,8 +129,18 @@ public class Player : MonoBehaviour {
             backgroundMusicController.StopBackgroundMusic();
             gameOverSoundEffect.Play();
             gameOverTmp.text = "Game Over";
+            //Destroy(runSoundEffect);
+            runSoundEffect.Stop();
             playAgain.gameObject.SetActive(true); 
             Time.timeScale = 0f; 
+             GameObject objectToDestroy = GameObject.FindWithTag("orb"); 
+         if (objectToDestroy != null)
+            {
+                Destroy(objectToDestroy);
+                Debug.Log("Destroyed");
+            }
+           
+           
         }
         else if( other.gameObject.tag == "lvl1"){
             SceneManager.LoadScene(2);
@@ -134,9 +175,20 @@ public class Player : MonoBehaviour {
 
     }
 
-    public void RestartGame() {
-        Time.timeScale = 1f; 
-        ScoreManager.levelNum = 1; 
-        SceneManager.LoadScene(1);
-    }
+   public void RestartGame() {
+    Time.timeScale = 1f; 
+    // GameObject objectToDestroy = GameObject.FindWithTag("orb"); 
+    // if (objectToDestroy != null)
+    // {
+    //     AudioSource audioSource = objectToDestroy.GetComponent<AudioSource>();
+    //     if (audioSource != null) {
+    //         audioSource.Stop(); // Stop the audio
+    //     }
+    //     Destroy(objectToDestroy);
+    //     Debug.Log("Orb Destroyed");
+    // }
+    ScoreManager.levelNum = 1; 
+    SceneManager.LoadScene(1);
+   }
 }
+

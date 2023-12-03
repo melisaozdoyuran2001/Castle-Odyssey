@@ -10,6 +10,8 @@ TagManager:
   - lvl3
   - lvl4
   - lvl5
+  - odz
+  - orb
   layers:
   - Default
   - TransparentFX

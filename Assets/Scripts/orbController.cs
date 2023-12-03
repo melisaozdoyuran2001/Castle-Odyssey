@@ -12,11 +12,19 @@ public class orbController : MonoBehaviour
         if (other.gameObject.tag == "enemy") {
             Destroy(other.gameObject); 
             ScoreManager.Instance.IncreaseScore(); 
+            PlayDeathSound();
         }
         Destroy(gameObject); 
     }
 
-    private void OnDestroy() {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "odz") {
+            Destroy(gameObject);
+        }
+    }
+
+    private void PlayDeathSound() {
         AudioSource.PlayClipAtPoint(enemyDeathSoundEffect, transform.position);
     }
 }
+

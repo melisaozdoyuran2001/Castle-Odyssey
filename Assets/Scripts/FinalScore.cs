@@ -7,6 +7,6 @@ public class FinalScore : MonoBehaviour
 {
    public TextMeshProUGUI finalScore;
    void Start() {
-    finalScore.text = "with a score of : " + ScoreManager.Instance.GetScoreNum() ; 
+        finalScore.text = "with a score of : " + ScoreManager.Instance.GetScoreNum();
    }
 }

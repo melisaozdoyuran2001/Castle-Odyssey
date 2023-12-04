@@ -137,7 +137,6 @@ public class Player : MonoBehaviour {
          if (objectToDestroy != null)
             {
                 Destroy(objectToDestroy);
-                Debug.Log("Destroyed");
             }
            
            
@@ -177,16 +176,6 @@ public class Player : MonoBehaviour {
 
    public void RestartGame() {
     Time.timeScale = 1f; 
-    // GameObject objectToDestroy = GameObject.FindWithTag("orb"); 
-    // if (objectToDestroy != null)
-    // {
-    //     AudioSource audioSource = objectToDestroy.GetComponent<AudioSource>();
-    //     if (audioSource != null) {
-    //         audioSource.Stop(); // Stop the audio
-    //     }
-    //     Destroy(objectToDestroy);
-    //     Debug.Log("Orb Destroyed");
-    // }
     ScoreManager.levelNum = 1; 
     SceneManager.LoadScene(1);
    }

@@ -4,7 +4,7 @@ Welcome to the official repository for Cave Odyssey, a pixel art style adventure
 
 ## Game Overview
 
-Cave Odyssey is an action-packed adventure game that follows our hero's journey into the depths of mysterious caves. Each level is a new adventure, from icy caverns and lava-filled dungeons to bioluminescent abysses and lush subterranean jungles.
+Cave Odyssey is an action-packed adventure game that follows our hero's journey into the depths of mysterious caves. Each level is a new adventure in the cave!
 
 ## Getting Started
 To play Cave Odyssey, clone the repository and run it on your local machine.
